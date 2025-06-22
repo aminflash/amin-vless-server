@@ -1,26 +1,25 @@
 {
   "log": {
     "level": "info",
-    "output": "stdout"
+    "timestamp": true
   },
   "inbounds": [
     {
       "type": "vless",
-      "listen": "0.0.0.0",
+      "listen": "::",
       "listen_port": 443,
       "users": [
         {
           "uuid": "1fb38348-70a9-4265-9337-0deaf5e323f7",
-          "flow": ""
+          "flow": "xtls-rprx-vision"
         }
       ],
-      "tls": {
-        "enabled": true,
-        "server_name": "aminvpn.duckdns.org"
-      },
       "transport": {
         "type": "ws",
-        "path": "/digikala.com/login"
+        "path": "/digikala.com/login/?ed=2560"
+      },
+      "tls": {
+        "enabled": false
       }
     }
   ],
