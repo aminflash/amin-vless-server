@@ -1,0 +1,32 @@
+{
+  "log": {
+    "level": "info",
+    "output": "stdout"
+  },
+  "inbounds": [
+    {
+      "type": "vless",
+      "listen": "0.0.0.0",
+      "listen_port": 443,
+      "users": [
+        {
+          "uuid": "1fb38348-70a9-4265-9337-0deaf5e323f7",
+          "flow": ""
+        }
+      ],
+      "tls": {
+        "enabled": true,
+        "server_name": "aminvpn.duckdns.org"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/digikala.com/login"
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "direct"
+    }
+  ]
+}
