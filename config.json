@@ -1,31 +1,46 @@
 {
   "log": {
-    "level": "info",
-    "timestamp": true
+    "level": "info"
   },
   "inbounds": [
     {
       "type": "vless",
       "listen": "::",
       "listen_port": 443,
+      "sniff": true,
+      "sniff_override_destination": true,
+      "tls": {
+        "enabled": true,
+        "server_name": "YOUR_DOMAIN",
+        "cert": {
+          "certificate_file": "/app/fullchain.cer",
+          "key_file": "/app/private.key"
+        }
+      },
+      "domain_strategy": "prefer_ipv4",
       "users": [
         {
           "uuid": "1fb38348-70a9-4265-9337-0deaf5e323f7",
-          "flow": "xtls-rprx-vision"
+          "flow": "",
+          "email": "amin@vless"
         }
       ],
       "transport": {
         "type": "ws",
-        "path": "/digikala.com/login/?ed=2560"
-      },
-      "tls": {
-        "enabled": false
+        "path": "/digikala.com/login/?ed=2560",
+        "headers": {
+          "Host":amin-vless-server-production.up.railway.app
+        }
       }
     }
   ],
   "outbounds": [
     {
       "type": "direct"
+    },
+    {
+      "type": "block",
+      "tag": "block"
     }
   ]
 }
