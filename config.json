@@ -6,21 +6,16 @@
     {
       "type": "vless",
       "listen": "::",
-      "listen_port": 443,
+      "listen_port": 80,
       "users": [
         {
           "uuid": "91d8a347-b3c9-4d8f-9c4f-2f963c4c07f9",
-          "flow": "",
           "encryption": "none"
         }
       ],
       "transport": {
         "type": "ws",
         "path": "/websocket"
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "amin-vless-server-production.up.railway.app"
       }
     }
   ],
