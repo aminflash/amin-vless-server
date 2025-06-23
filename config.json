@@ -15,7 +15,7 @@
       ],
       "transport": {
         "type": "ws",
-        "path": "/websocket"
+        "path": "/ws"
       }
     }
   ],
