@@ -7,31 +7,26 @@
       "type": "vless",
       "listen": "::",
       "listen_port": 443,
-      "users": [
-        {
-          "uuid": "91d8a347-b3c9-4d8f-9c4f-2f963c4c07f9",
-          "flow": "xtls-rprx-vision"
-        }
-      ],
       "tls": {
         "enabled": true,
-        "reality": {
-          "enabled": true,
-          "handshake": {
-            "server": "www.cloudflare.com", 
-            "server_port": 443
-          },
-          "private_key": "uHZRxmF14GxN2rVW5JGqrmmsGgGMezvTDB2TuC13eWM",
-          "short_id": [
-            "b15c973b9ea4a3f3"
-          ]
+        "server_name": "amin-vless-server-production.up.railway.app",
+        "alpn": ["h3", "h2", "http/1.1"]
+      },
+      "users": [
+        {
+          "id": "91d8a347-b3c9-4d8f-9c4f-2f963c4c07f9",
+          "encryption": "none"
         }
+      ],
+      "transport": {
+        "type": "ws",
+        "path": "/digikala.com/login/?ed=2560"
       }
     }
   ],
   "outbounds": [
     {
-      "type": "direct"
+      "type": "freedom"
     }
   ]
 }
