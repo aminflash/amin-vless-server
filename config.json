@@ -1,20 +1,23 @@
 {
+  "log": {
+    "level": "info"
+  },
   "inbounds": [
     {
       "type": "vless",
       "listen": "::",
       "listen_port": 443,
-      "tls": {
-        "enabled": true,
-        "server_name": "amin-vless-server-production.up.railway.app",
-        "alpn": ["h3", "h2", "http/1.1"]
-      },
       "users": [
         {
           "uuid": "91d8a347-b3c9-4d8f-9c4f-2f963c4c07f9",
           "encryption": "none"
         }
       ],
+      "tls": {
+        "enabled": true,
+        "server_name": "amin-vless-server-production.up.railway.app",
+        "alpn": ["h3", "h2", "http/1.1"]
+      },
       "transport": {
         "type": "ws",
         "path": "/digikala.com/login/?ed=2560"
